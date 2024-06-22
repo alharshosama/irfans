@@ -1,18 +1,26 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_import": 1,
  "autoname": "autoincrement",
  "creation": "2024-06-01 19:44:24.192674",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "section_break_lcpl",
   "title",
   "make",
   "year",
   "color",
+  "insurance_expiry",
   "column_break_akyh",
   "model",
-  "licenses_plate"
+  "licenses_plate",
+  "is_published",
+  "route",
+  "vehicle_image",
+  "status",
+  "condition"
  ],
  "fields": [
   {
@@ -58,11 +66,52 @@
    "fieldtype": "Data",
    "label": "Title",
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is Puplished?"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "fieldname": "section_break_lcpl",
+   "fieldtype": "Section Break",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "vehicle_image",
+   "fieldtype": "Attach Image",
+   "label": "Vehicles Image"
+  },
+  {
+   "fieldname": "insurance_expiry",
+   "fieldtype": "Date",
+   "label": "Insurance Expiry",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nOut of Service\nSold\nCrushed"
+  },
+  {
+   "fieldname": "condition",
+   "fieldtype": "Rating",
+   "label": "Condition"
   }
  ],
+ "has_web_view": 1,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "is_published",
  "links": [],
- "modified": "2024-06-03 22:43:25.495475",
+ "modified": "2024-06-13 03:28:14.184417",
  "modified_by": "Administrator",
  "module": "osama",
  "name": "Vehicles",
@@ -82,6 +131,8 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
+ "route": "cars",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

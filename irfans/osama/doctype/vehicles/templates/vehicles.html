@@ -1,0 +1,15 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h1>{{ title }}</h1>
+<h2>Color:{{doc.color}}</h2>
+
+{% if  doc.vehicles_image %}
+<img src="{{ doc.vechiles_image }}" />
+{% else %}
+<span>No image avilabel</span>
+{% endif %}
+
+<a class="btn btn-info" href="/Ride Oder">Ride Oder</a>
+{% endblock %}
+

@@ -1,0 +1,28 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "",
+ "creation": "2024-06-13 02:47:47.445439",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Ride Booking",
+ "enabled": 1,
+ "event": "New",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Hi , new booking has arrived!\n\n<a herf=\"http://localhost/app/osama\">click her to view </a>\n",
+ "modified": "2024-06-13 02:47:47.445439",
+ "modified_by": "Administrator",
+ "module": "osama",
+ "name": "New Booking Arrived!",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "System Manager"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "{{ doc.coustomer_name}} booked a vehicles!"
+}
