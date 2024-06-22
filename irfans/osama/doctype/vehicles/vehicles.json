@@ -13,6 +13,8 @@
   "year",
   "color",
   "insurance_expiry",
+  "get_summary",
+  "summary",
   "column_break_akyh",
   "model",
   "licenses_plate",
@@ -104,6 +106,16 @@
    "fieldname": "condition",
    "fieldtype": "Rating",
    "label": "Condition"
+  },
+  {
+   "fieldname": "get_summary",
+   "fieldtype": "Button",
+   "label": "Get Summary"
+  },
+  {
+   "fieldname": "summary",
+   "fieldtype": "HTML",
+   "label": "Summary"
   }
  ],
  "has_web_view": 1,
@@ -111,7 +123,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "is_published",
  "links": [],
- "modified": "2024-06-13 03:28:14.184417",
+ "modified": "2024-06-18 23:44:37.491764",
  "modified_by": "Administrator",
  "module": "osama",
  "name": "Vehicles",

@@ -69,7 +69,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 23:03:38.995221",
+ "modified": "2024-06-15 02:24:15.987809",
  "modified_by": "Administrator",
  "module": "osama",
  "name": "Ride Oder",
@@ -89,6 +89,7 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

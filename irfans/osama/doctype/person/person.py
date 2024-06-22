@@ -3,10 +3,12 @@
 
 import frappe
 from frappe.model.document import Document
-class Drivers(Document):
+
+# Controller class
+class Person(Document):
     def before_save(self):
         self.full_name = f"{self.first_name} {self.last_name}"
-
+    
     def send_alert(self):
         print("sending Message")
 
@@ -16,3 +18,6 @@ class Drivers(Document):
 
     def after_insert(self):
         frappe.sendmail(recipients=[self.email], message="Thank you for registering!")
+	# def save(self, "Person"):
+    #     super().save("Person") # call the base save method
+    #     do_something()

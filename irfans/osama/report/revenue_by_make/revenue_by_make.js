@@ -3,6 +3,12 @@
 
 frappe.query_reports["Revenue by make"] = {
 	"filters": [
+		{
+			"fieldname": "my_filter",
+			"label": "My Filter",
+			"fieldtype": "Link",
+			"options": "Vehicles"
+		}
 
 	]
 };

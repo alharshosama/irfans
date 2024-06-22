@@ -1,51 +1,40 @@
 {
  "actions": [],
- "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:DR-{###}",
- "creation": "2024-05-30 18:34:58.922841",
+ "autoname": "format:RO-{###}",
+ "creation": "2024-06-14 22:55:49.266398",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "enabled",
   "first_name",
-  "licesnse_number",
+  "age",
   "full_name",
-  "column_break_kugk",
+  "column_break_bcna",
   "last_name",
-  "phone_number",
-  "profile_iamge",
-  "age"
+  "phone_number"
  ],
  "fields": [
-  {
-   "default": "1",
-   "fieldname": "enabled",
-   "fieldtype": "Check",
-   "label": "Enabled?"
-  },
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "first_name",
+   "label": "First Name",
    "reqd": 1
   },
   {
-   "fieldname": "licesnse_number",
-   "fieldtype": "Data",
+   "fieldname": "age",
+   "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Licesnse Number ",
+   "label": "Age",
    "reqd": 1
   },
   {
-   "fieldname": "column_break_kugk",
+   "fieldname": "column_break_bcna",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "last_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Last Name"
   },
   {
@@ -54,30 +43,18 @@
    "label": "Phone Number"
   },
   {
-   "fieldname": "profile_iamge",
-   "fieldtype": "Attach Image",
-   "label": "Profile Iamge"
-  },
-  {
    "fieldname": "full_name",
    "fieldtype": "Data",
    "label": "Full Name",
    "read_only": 1
-  },
-  {
-   "fieldname": "age",
-   "fieldtype": "Int",
-   "label": "Age",
-   "reqd": 1
   }
  ],
- "image_field": "profile_iamge",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-15 00:48:00.708753",
+ "modified": "2024-06-14 23:46:13.059992",
  "modified_by": "Administrator",
  "module": "osama",
- "name": "Drivers",
+ "name": "Person",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
@@ -94,10 +71,9 @@
    "write": 1
   }
  ],
- "show_title_field_in_link": 1,
+ "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "first_name",
  "track_changes": 1
 }

@@ -4,6 +4,9 @@
 import frappe
 
 def execute(filters=None):
+    frappe.errprint(filters)
+    # print("---"*20)
+    # print(filters)
     columns = [
         {
             "fieldname": "make",
@@ -24,5 +27,13 @@ def execute(filters=None):
         filters={"docstatus": 1},
         group_by="make"
     )
-    
-    return columns, data, "Message Summary",None
+    chart = {
+        "data":{
+            "labels": [x.make for x in data],
+            "datasets": [{"values": [x.total_revenue for x in data]}],
+        },
+        
+        "type": "pie",
+
+    }
+    return columns, data, "Here is the report",chart
