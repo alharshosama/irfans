@@ -1,0 +1,44 @@
+{
+ "add_total_row": 1,
+ "columns": [
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "customer_name",
+   "options": "New Accepted Rejected",
+   "width": 0
+  }
+ ],
+ "creation": "2024-07-28 16:04:42.160197",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "customer_name",
+   "mandatory": 1,
+   "options": "\n",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-07-28 16:32:25.183106",
+ "modified_by": "Administrator",
+ "module": "osama",
+ "name": "Ride Order Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT customer_name, COUNT(*) \nFROM `tabRide Order`\nGROUP BY customer_name\nHAVING customer_name LIKE %(customer_name)s;\n",
+ "ref_doctype": "Ride Order",
+ "report_name": "Ride Order Report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

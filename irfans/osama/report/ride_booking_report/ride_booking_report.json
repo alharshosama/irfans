@@ -1,0 +1,42 @@
+{
+ "add_total_row": 1,
+ "columns": [
+  {
+   "fieldname": "still_editable",
+   "fieldtype": "Data",
+   "label": "still_editable",
+   "width": 0
+  }
+ ],
+ "creation": "2024-07-28 17:37:53.766163",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "still_editable",
+   "fieldtype": "Data",
+   "label": "still_editable",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-07-28 17:46:34.451184",
+ "modified_by": "Administrator",
+ "module": "osama",
+ "name": "Ride Booking Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT still_editable, COUNT(*) \nFROM `tabRide Booking`\nGROUP BY still_editable\nHAVING still_editable LIKE %(still_editable)s;\n",
+ "ref_doctype": "Ride Booking",
+ "report_name": "Ride Booking Report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

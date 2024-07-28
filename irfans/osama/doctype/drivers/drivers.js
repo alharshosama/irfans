@@ -6,9 +6,9 @@ frappe.ui.form.on("Drivers", {
 
 // 	},
 
-       first_name(frm){
-            frm.save()
-        },
+    //    first_name(frm){
+    //         frm.save()
+    //     },
         age(frm){
             frm.save()
         }

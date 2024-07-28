@@ -1,0 +1,54 @@
+{
+ "actions": [
+  {
+   "action": "my_app.api.execute_function",
+   "action_type": "Server Action",
+   "label": "Execute"
+  },
+  {
+   "action": "my_app.api.actions_function",
+   "action_type": "Server Action",
+   "label": "Actions"
+  }
+ ],
+ "allow_rename": 1,
+ "creation": "2024-07-23 18:19:24.632978",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name1"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-07-23 18:38:35.008721",
+ "modified_by": "Administrator",
+ "module": "osama",
+ "name": "Single",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

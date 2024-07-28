@@ -5,10 +5,10 @@
 	// refresh(frm) {
 
 	// },
-    first_name(frm){
-        frm.save()
-    },
-    age(frm){
-        frm.save()
-    }
+    // first_name(frm){
+    //     frm.save()
+    // },
+    // age(frm){
+    //     frm.save()
+    // }
  });

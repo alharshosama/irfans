@@ -16,8 +16,8 @@ class Person(Document):
         if self.age <= 18:
             frappe.throw("Person's age must be at least 18")
 
-    def after_insert(self):
-        frappe.sendmail(recipients=[self.email], message="Thank you for registering!")
+    # def after_insert(self):
+    #     frappe.sendmail(recipients=[self.email], message="Thank you for registering!")
 	# def save(self, "Person"):
     #     super().save("Person") # call the base save method
     #     do_something()
