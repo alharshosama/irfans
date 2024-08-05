@@ -1,30 +1,29 @@
 // Copyright (c) 2024, osama and contributors
 // For license information, please see license.txt
 
-frappe.query_reports["Ride Order Script"] = {
+frappe.query_reports["Drivers Script"] = {
     "filters": [
         {
-            "fieldname": "customer_name",
-            "label": ("Customer Name"),
+            "fieldname": "first_name",
+            "label": ("First Name"),
             "fieldtype": "Data",
             "default": ""
         },
         {
-            "fieldname": "contact_number",
-            "label": ("Contact Number"),
+            "fieldname": "last_name",
+            "label": ("Last Name"),
             "fieldtype": "Data",
             "default": ""
         },
         {
-            "fieldname": "status",
-            "label": ("Status"),
-            "fieldtype": "Select",
-            "options": ["New", "Accepted", "Rejected"],
+            "fieldname": "full_name",
+            "label": ("Full Name"),
+            "fieldtype": "Data",
             "default": ""
         },
         {
-            "fieldname": "ride_count",
-            "label": ("Ride Count"),
+            "fieldname": "age",
+            "label": ("Age"),
             "fieldtype": "Int",
             "default": ""
         }
@@ -43,36 +42,36 @@ frappe.query_reports["Ride Order Script"] = {
         frappe.call({
             method: "frappe.client.get_list",
             args: {
-                doctype: "Ride Order",
-                fields: ["customer_name", "contact_number", "status", "ride_count"],
+                doctype: "Drivers",
+                fields: ["first_name", "last_name", "full_name", "age"],
                 filters: filters
             },
             callback: function(response) {
                 const data = response.message;
 
                 // Create Chart
-                let statusCounts = {};
-                data.forEach(order => {
-                    if (!statusCounts[order.status]) {
-                        statusCounts[order.status] = 0;
+                let ageGroups = {};
+                data.forEach(driver => {
+                    if (!ageGroups[driver.age]) {
+                        ageGroups[driver.age] = 0;
                     }
-                    statusCounts[order.status]++;
+                    ageGroups[driver.age]++;
                 });
 
-                let labels = Object.keys(statusCounts);
-                let values = Object.values(statusCounts);
+                let labels = Object.keys(ageGroups);
+                let values = Object.values(ageGroups);
 
                 new frappe.Chart("#chart", {
                     data: {
                         labels: labels,
                         datasets: [
                             {
-                                name: "Orders by Status",
+                                name: "Drivers by Age",
                                 values: values
                             }
                         ]
                     },
-                    type: 'pie', // or 'bar', 'line', etc.
+                    type: 'bar', // or 'line', 'pie', etc.
                     height: 300
                 });
             }

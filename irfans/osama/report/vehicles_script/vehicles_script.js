@@ -1,17 +1,41 @@
 // Copyright (c) 2024, osama and contributors
 // For license information, please see license.txt
 
-frappe.query_reports["Ride Order Script"] = {
+frappe.query_reports["Vehicles Script"] = {
     "filters": [
         {
-            "fieldname": "customer_name",
-            "label": ("Customer Name"),
+            "fieldname": "title",
+            "label": ("Title"),
             "fieldtype": "Data",
             "default": ""
         },
         {
-            "fieldname": "contact_number",
-            "label": ("Contact Number"),
+            "fieldname": "model",
+            "label": ("Model"),
+            "fieldtype": "Data",
+            "default": ""
+        },
+        {
+            "fieldname": "make",
+            "label": __("Make"),
+            "fieldtype": "Data",
+            "default": ""
+        },
+        {
+            "fieldname": "year",
+            "label": ("Year"),
+            "fieldtype": "Int",
+            "default": ""
+        },
+        {
+            "fieldname": "color",
+            "label": ("Color"),
+            "fieldtype": "Data",
+            "default": ""
+        },
+        {
+            "fieldname": "route",
+            "label": ("Route"),
             "fieldtype": "Data",
             "default": ""
         },
@@ -19,13 +43,7 @@ frappe.query_reports["Ride Order Script"] = {
             "fieldname": "status",
             "label": ("Status"),
             "fieldtype": "Select",
-            "options": ["New", "Accepted", "Rejected"],
-            "default": ""
-        },
-        {
-            "fieldname": "ride_count",
-            "label": ("Ride Count"),
-            "fieldtype": "Int",
+            "options": ["Active", "Out of Service", "Sold", "Crushed"],
             "default": ""
         }
     ],
@@ -43,8 +61,8 @@ frappe.query_reports["Ride Order Script"] = {
         frappe.call({
             method: "frappe.client.get_list",
             args: {
-                doctype: "Ride Order",
-                fields: ["customer_name", "contact_number", "status", "ride_count"],
+                doctype: "Vehicles",
+                fields: ["title", "model", "make", "year", "color", "route", "status"],
                 filters: filters
             },
             callback: function(response) {
@@ -52,11 +70,12 @@ frappe.query_reports["Ride Order Script"] = {
 
                 // Create Chart
                 let statusCounts = {};
-                data.forEach(order => {
-                    if (!statusCounts[order.status]) {
-                        statusCounts[order.status] = 0;
+                data.forEach(vehicle => {
+                    let status = vehicle.status;
+                    if (!statusCounts[status]) {
+                        statusCounts[status] = 0;
                     }
-                    statusCounts[order.status]++;
+                    statusCounts[status]++;
                 });
 
                 let labels = Object.keys(statusCounts);
@@ -67,7 +86,7 @@ frappe.query_reports["Ride Order Script"] = {
                         labels: labels,
                         datasets: [
                             {
-                                name: "Orders by Status",
+                                name: "Vehicles by Status",
                                 values: values
                             }
                         ]

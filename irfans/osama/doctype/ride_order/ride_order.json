@@ -10,6 +10,7 @@
   "contact_number",
   "pickup_time",
   "vehicle",
+  "ride_count",
   "column_break_pfwd",
   "status",
   "pickup_address",
@@ -65,11 +66,17 @@
    "fieldname": "location",
    "fieldtype": "Geolocation",
    "label": "Location"
+  },
+  {
+   "fieldname": "ride_count",
+   "fieldtype": "Int",
+   "label": "Ride count",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-15 02:24:15.987809",
+ "modified": "2024-07-29 19:28:45.253446",
  "modified_by": "Administrator",
  "module": "osama",
  "name": "Ride Order",
